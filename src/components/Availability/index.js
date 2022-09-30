@@ -4,7 +4,6 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 
 const renderAst = new rehypeReact({

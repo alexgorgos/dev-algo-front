@@ -20,8 +20,6 @@ const Homepage = ({ pageContext }) => {
     feedbacks,
   } = pageContext;
 
-  console.log(feedbacks);
-
   const light = "rgb(0, 30, 60)";
   const dark = "rgb(10, 25, 41)";
 

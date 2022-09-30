@@ -52,15 +52,6 @@ const Feedbacks = ({ bgcolor, maxWidth, feedbacks }) => {
     ]
   );
 
-  const AdaptiveHeight = (slider) => {
-    function updateHeight() {
-      slider.container.style.height =
-        slider.slides[slider.track.details.rel].offsetHeight + "px";
-    }
-    slider.on("created", updateHeight);
-    slider.on("slideChanged", updateHeight);
-  };
-
   return (
     <Box
       className="navigation-wrapper"

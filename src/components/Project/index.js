@@ -28,7 +28,8 @@ const Project = ({ maxWidth, name, url, relatedStack, mainImage, no }) => {
       <Container maxWidth={maxWidth}>
         <Grid container alignItems={"center"}>
           <Grid
-            sx={12}
+            item
+            xs={12}
             md={5}
             order={orderC1}
             textAlign={{ xs: "left", md: no % 2 ? "right" : "left" }}
@@ -51,9 +52,14 @@ const Project = ({ maxWidth, name, url, relatedStack, mainImage, no }) => {
               </Typography>
             </Box>
           </Grid>
-          <Grid xs={12} md={7} order={orderC2} pb={{ xs: 2, md: 0 }}>
+          <Grid item xs={12} md={7} order={orderC2} pb={{ xs: 2, md: 0 }}>
             <Link href={url} target="_blank">
-              {mainImage && <GatsbyImage image={getImage(mainImage)} />}
+              {mainImage && (
+                <GatsbyImage
+                  image={getImage(mainImage)}
+                  alt={`${name} website screenshot`}
+                />
+              )}
             </Link>
           </Grid>
         </Grid>
