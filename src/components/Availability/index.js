@@ -38,7 +38,8 @@ const Availability = ({ maxWidth, bgcolor, content, cv }) => {
           <Box textAlign="center" pt={5}>
             <Button
               endIcon={<InsertDriveFileIcon fontSize="small" />}
-              href="https://google.com"
+              href="/CV.pdf"
+              target="_blank"
               variant="contained"
               disableElevation
               style={{
@@ -46,7 +47,7 @@ const Availability = ({ maxWidth, bgcolor, content, cv }) => {
                 borderRadius: 0,
               }}
             >
-              C.V.
+              Resume
             </Button>
           </Box>
         )}
