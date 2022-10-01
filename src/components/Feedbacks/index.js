@@ -56,7 +56,7 @@ const Feedbacks = ({ bgcolor, maxWidth, feedbacks }) => {
     <Box
       className="navigation-wrapper"
       py={{ xs: 10, md: 20 }}
-      sx={{ bgcolor: bgcolor }}
+      sx={{ bgcolor: bgcolor, overflow: "hidden" }}
     >
       <Box ref={sliderRef} className="keen-slider">
         {feedbacks.length &&
