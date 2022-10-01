@@ -1,3 +1,7 @@
+body > div {
+  overflow: "hidden";
+}
+
 [class^="number-slide"],
 [class*=" number-slide"] {
   background: grey;
@@ -38,6 +42,7 @@
 
 keen-slider {
   transition: height 0.3s;
+  overflow: "hidden";
 }
 
 .keen-slider .keen-slider__slide {
