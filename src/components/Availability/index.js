@@ -25,7 +25,7 @@ const Availability = ({ maxWidth, bgcolor, content, cv }) => {
       <Container maxWidth={maxWidth}>
         <Typography
           variant="h4"
-          component="h3"
+          component="h2"
           fontWeight="bold"
           textAlign="center"
         >
@@ -41,6 +41,7 @@ const Availability = ({ maxWidth, bgcolor, content, cv }) => {
               target="_blank"
               variant="contained"
               disableElevation
+              aria-label="Go to resume"
               style={{
                 display: "inline-block",
                 borderRadius: 0,

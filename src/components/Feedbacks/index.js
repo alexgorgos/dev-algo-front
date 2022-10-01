@@ -81,6 +81,7 @@ const Feedbacks = ({ bgcolor, maxWidth, feedbacks }) => {
             return (
               <button
                 key={idx}
+                aria-label={`change to slide ${idx + 1}`}
                 onClick={() => {
                   instanceRef.current?.moveToIdx(idx);
                 }}

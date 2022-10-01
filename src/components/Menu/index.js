@@ -31,7 +31,13 @@ const MenuBar = () => {
       <AppBar component="nav">
         <Container maxWidth="xl">
           <Toolbar>
-            <Link variant="logo" color="#fff" underline="none" href="/">
+            <Link
+              variant="logo"
+              color="#fff"
+              underline="none"
+              href="/"
+              aria-label="Go to Homepage"
+            >
               Alexandru Gorgos
             </Link>
           </Toolbar>

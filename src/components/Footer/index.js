@@ -22,8 +22,10 @@ const Footer = ({ bgcolor, maxWidth, contact, legalPages }) => {
                 <Link
                   href="/"
                   mr={3}
+                  p={1}
                   color="#fff"
                   display={{ xs: "block", md: "inline-block" }}
+                  aria-label="Go to Homepage"
                 >
                   {"Home"}
                 </Link>
@@ -33,8 +35,10 @@ const Footer = ({ bgcolor, maxWidth, contact, legalPages }) => {
                       key={i}
                       href={page.slug}
                       mr={3}
+                      py={1}
                       color="#fff"
                       display={{ xs: "block", md: "inline-block" }}
+                      aria-label={`Go to ${page.title} page`}
                     >
                       {page.title}
                     </Link>
@@ -56,16 +60,36 @@ const Footer = ({ bgcolor, maxWidth, contact, legalPages }) => {
               alignItems="flex-end"
               justifyContent="flex-end"
             >
-              <Link href={contact.whatsapp} target="_blank" color="#fff">
+              <Link
+                href={contact.whatsapp}
+                target="_blank"
+                color="#fff"
+                aria-label="Go to Whatsapp"
+              >
                 <WhatsAppIcon fontSize="small" />
               </Link>
-              <Link href={contact.linkedIn} target="_blank" color="#fff">
+              <Link
+                href={contact.linkedIn}
+                target="_blank"
+                color="#fff"
+                aria-label="Go to LinkedIn"
+              >
                 <LinkedInIcon fontSize="small" />
               </Link>
-              <Link href={contact.gitHub} target="_blank" color="#fff">
+              <Link
+                href={contact.gitHub}
+                target="_blank"
+                color="#fff"
+                aria-label="Go to GitHub"
+              >
                 <GitHubIcon fontSize="small" />
               </Link>
-              <Link href={contact.twitter} target="_blank" color="#fff">
+              <Link
+                href={contact.twitter}
+                target="_blank"
+                color="#fff"
+                aria-label="Go to Twitter"
+              >
                 <TwitterIcon fontSize="small" />
               </Link>
             </Stack>

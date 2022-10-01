@@ -61,11 +61,12 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://dev.alexandrugorgos.com",
-        sitemap: "https://dev.alexandrugorgos.com/sitemap.xml",
+        sitemap: "https://dev.alexandrugorgos.com/sitemap/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
