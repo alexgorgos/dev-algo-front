@@ -8,7 +8,6 @@ module.exports = {
     twitterUsername: `@alexandrugo_`,
     image: `/6532770.jpeg`,
   },
-
   plugins: [
     {
       resolve: "gatsby-source-contentful",
@@ -62,5 +61,13 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://dev.alexandrugorgos.com",
+        sitemap: "https://dev.alexandrugorgos.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
   ],
 };
