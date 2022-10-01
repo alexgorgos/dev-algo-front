@@ -47,6 +47,7 @@ const Homepage = ({ pageContext }) => {
         <meta name="twitter:image" content="/6532770.jpeg" />
         <meta name="twitter:creator" content="@alexandrugo_" />
         <link rel="icon" href="/ico.jpg" />
+        <meta name="robots" content="index" />
       </Helmet>
       <Header bgcolor={light} maxWidth="xl" content={headerContent} />
       <main>
