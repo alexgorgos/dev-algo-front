@@ -12,7 +12,7 @@ const slugify = (text) => {
     .replace(/\-$/g, "");
 };
 
-exports.createPages = async function ({ actions, graphql }) {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
   const contactRes = await graphql(`
@@ -90,11 +90,22 @@ exports.createPages = async function ({ actions, graphql }) {
     }
   `);
 
+  const getLegalPages = () => {
+    let arr = [];
+    legalPagesRes.data.allContentfulLegal.nodes.forEach(async (node) => {
+      arr.push({ title: node.pageTitle, slug: `/${slugify(node.pageTitle)}` });
+    });
+    return arr;
+  };
+
+  const legalPages = await getLegalPages();
+
   await createPage({
     path: `/`,
     component: path.resolve(`src/templates/homepage.js`),
     context: {
       contact: contactRes.data.contentfulContact,
+      legalPages: legalPages,
       headerContent:
         landingPageRes.data.contentfulLandingPage.headerParagraph
           .headerParagraph,
@@ -114,11 +125,13 @@ exports.createPages = async function ({ actions, graphql }) {
     },
   });
 
-  legalPagesRes.data.allContentfulLegal.nodes.forEach((node) => {
-    createPage({
+  legalPagesRes.data.allContentfulLegal.nodes.forEach(async (node) => {
+    await createPage({
       path: `/${slugify(node.pageTitle)}`,
       component: path.resolve(`src/templates/legal.js`),
       context: {
+        contact: contactRes.data.contentfulContact,
+        legalPages: legalPages,
         pageTitle: node.pageTitle,
         pageContent: node.pageContent.childMarkdownRemark.htmlAst,
       },

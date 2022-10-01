@@ -10,12 +10,28 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
-const Footer = ({ bgcolor, maxWidth, contact }) => {
+const Footer = ({ bgcolor, maxWidth, contact, legalPages }) => {
+  console.log(legalPages);
   return (
     <Box component="footer" sx={{ bgcolor: bgcolor }} py={5}>
       <Container maxWidth={maxWidth}>
-        <Grid container>
-          <Grid item xs={5} md={8}></Grid>
+        <Grid container alignItems="center">
+          <Grid item xs={5} md={8}>
+            {legalPages && (
+              <Typography variant="contact" component="nav">
+                <Link href="/" mr={3} color="#fff">
+                  {"Home"}
+                </Link>
+                {legalPages.map((page, i) => {
+                  return (
+                    <Link key={i} href={page.slug} mr={3} color="#fff">
+                      {page.title}
+                    </Link>
+                  );
+                })}
+              </Typography>
+            )}
+          </Grid>
           <Grid item xs={7} md={4} textAlign="right">
             <Typography variant="contact">{contact.emailAddress}</Typography>
             <br />

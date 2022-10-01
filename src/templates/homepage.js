@@ -18,6 +18,7 @@ const Homepage = ({ pageContext }) => {
     availability,
     cv,
     feedbacks,
+    legalPages,
   } = pageContext;
 
   const light = "rgb(0, 30, 60)";
@@ -64,7 +65,12 @@ const Homepage = ({ pageContext }) => {
         />
         <Feedbacks bgcolor={light} maxWidth="xl" feedbacks={feedbacks} />
       </main>
-      <Footer bgcolor={dark} maxWidth="xl" contact={contact} />
+      <Footer
+        bgcolor={dark}
+        maxWidth="xl"
+        contact={contact}
+        legalPages={legalPages}
+      />
     </Layout>
   );
 };

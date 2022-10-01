@@ -32,6 +32,11 @@ let theme = createTheme({
     contact: {
       fontSize: "1rem",
     },
+    logo: {
+      fontFamily: "Source Code Pro, monospace",
+      fontSize: "1em",
+      letterSpacing: ".01rem",
+    },
   },
 });
 
