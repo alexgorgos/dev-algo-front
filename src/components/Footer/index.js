@@ -19,12 +19,23 @@ const Footer = ({ bgcolor, maxWidth, contact, legalPages }) => {
           <Grid item xs={5} md={8}>
             {legalPages && (
               <Typography variant="contact" component="nav">
-                <Link href="/" mr={3} color="#fff">
+                <Link
+                  href="/"
+                  mr={3}
+                  color="#fff"
+                  display={{ xs: "block", md: "inline-block" }}
+                >
                   {"Home"}
                 </Link>
                 {legalPages.map((page, i) => {
                   return (
-                    <Link key={i} href={page.slug} mr={3} color="#fff">
+                    <Link
+                      key={i}
+                      href={page.slug}
+                      mr={3}
+                      color="#fff"
+                      display={{ xs: "block", md: "inline-block" }}
+                    >
                       {page.title}
                     </Link>
                   );
